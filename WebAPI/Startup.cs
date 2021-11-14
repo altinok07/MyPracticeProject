@@ -1,6 +1,5 @@
 using Business.Abstract;
 using Business.Concrete;
-using Core.Utilities.Security.Encyption;
 using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -19,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Utilities.Security.Encryption;
 
 namespace WebAPI
 {
@@ -48,7 +48,7 @@ namespace WebAPI
                     {
                         ValidateIssuer = true,
                         ValidateAudience = true,
-                        ValidateLifetime = true, 
+                        ValidateLifetime = true,
                         ValidIssuer = tokenOptions.Issuer,
                         ValidAudience = tokenOptions.Audience,
                         ValidateIssuerSigningKey = true,
